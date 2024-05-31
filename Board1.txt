@@ -87,8 +87,30 @@ void loop() {
     if (goout < 120) {
         carNumber = carNumber - 1;
     }
+    //lcd
+  lcd.begin();
+  lcd.backlight();
+  lcd.setCursor(0,0);
+  lcd.print("Car Number :");
+  lcd.print(carNumber);
 
+  //3색 led
+  if(carNumber <=4){
+    analogWrite(RED,0);
+    analogWrite(GREEN,200);
+    analogWrite(BLUE, 0);
+  }
+  if(carNumber >=5){
+    analogWrite(RED,200);
+    analogWrite(GREEN,0);
+    analogWrite(BLUE, 0);
+  }
 
+  delay(1000);  
 }
+
+
+
+
 
 
